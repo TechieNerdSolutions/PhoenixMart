@@ -110,7 +110,7 @@ WSGI_APPLICATION = 'phoenixmart.wsgi.application'
 
 
 DATABASES = {
-    'default': dj-database-url('Database_URL')
+    'default': dj-database-url.parse(env('Database_URL'))
 }
 
 # Password validation

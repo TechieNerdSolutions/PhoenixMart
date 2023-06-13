@@ -52,6 +52,7 @@ django-multiselectfield
 django-nvd3
 django-paypal
 django-phone-field
+django-shortuuidfield
 django-social-share
 django-static-fontawesome
 django-stubs

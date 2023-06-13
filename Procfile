@@ -1,1 +1,0 @@
-web: gunicorn phoenixmart.wsgi --log-file -

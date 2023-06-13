@@ -97,8 +97,8 @@ class Product(models.Model):
     # description = models.TextField(null=True, blank=True, default="This is the product")
     description = RichTextUploadingField(null=True, blank=True, default="This is the product")
 
-    price = models.DecimalField(max_digits=99999999999999, decimal_places=2, default="1.99")
-    old_price = models.DecimalField(max_digits=99999999999999, decimal_places=2, default="2.99")
+    price = models.DecimalField(max_digits=15, decimal_places=2, default="1.99")
+    old_price = models.DecimalField(max_digits=15, decimal_places=2, default="2.99")
 
     specifications = RichTextUploadingField(null=True, blank=True)
     # specifications = models.TextField(null=True, blank=True)
@@ -162,7 +162,7 @@ class ProductImages(models.Model):
 
 class CartOrder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=99999999999999, decimal_places=2, default="1.99")
+    price = models.DecimalField(max_digits=15, decimal_places=2, default="1.99")
     paid_status = models.BooleanField(default=False, null=True, blank=True)
     order_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     product_status = models.CharField(choices=STATUS_CHOICE, max_length=30, default="processing")
@@ -179,8 +179,8 @@ class CartOrderProducts(models.Model):
     item = models.CharField(max_length=200)
     image = models.CharField(max_length=200)
     qty = models.IntegerField(default=0)
-    price = models.DecimalField(max_digits=99999999999999, decimal_places=2, default="1.99")
-    total = models.DecimalField(max_digits=99999999999999, decimal_places=2, default="1.99")
+    price = models.DecimalField(max_digits=15, decimal_places=2, default="1.99")
+    total = models.DecimalField(max_digits=15, decimal_places=2, default="1.99")
 
 
     class Meta:

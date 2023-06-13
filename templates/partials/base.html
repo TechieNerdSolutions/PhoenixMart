@@ -5,16 +5,32 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Nest - Multipurpose eCommerce HTML Template</title>
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg" />
+    <title>PhoenixMart</title>
+    <meta
+      name="description"
+      content="Discover a world of endless shopping possibilities at PhoenixMart. Shop, sell, and experience convenience like never before. Join us today!"
+    />
+    <meta property="og:url" content="./" />
+    <meta property="og:site_name" content="PhoenixMart" />
+    <meta property="og:title" content="PhoenixMart" />
+    <meta property="og:description" content="Discover a world of endless shopping possibilities at PhoenixMart. Shop, sell, and experience convenience like never before. Join us today!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/2.ico" />
+    <meta property="og:locale" content="en" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PhoenixMart" />
+    <meta
+      name="twitter:description"
+      content="Unleash your shopping desires at PhoenixMart. Satisfaction guaranteed."
+    />
+    <meta name="twitter:image" content="img/phoenixmart.jpg" />
+    <meta name="twitter:image:alt" content="PhoenixMart" />
+    <meta name="theme-color" content="#F3F6F4" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/imgs/favicon.ico' %}" type="image/x-icon" />
+    
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/plugins/slider-range.css" />
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
@@ -110,7 +126,7 @@
                                 </div>
                                 <div class="font-xs">
                                     <ul>
-                                        <li class="mb-5">Vendor: <span class="text-brand">Nest</span></li>
+                                        <li class="mb-5">Vendor: <span class="text-brand">PhoenixMart</span></li>
                                         <li class="mb-5">MFG:<span class="text-brand"> Jun 4.2022</span></li>
                                     </ul>
                                 </div>
@@ -192,7 +208,7 @@
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a href="index.html"><img src="{% static 'assets/imgs/theme/logo.svg' %}" alt="logo" /></a>
+                        <a href="index.html"><img src="{% static 'assets/imgs/logo.png' %}" alt="logo" /></a>
                     </div>
                     <div class="header-right">
                         <div class="search-style-2">
@@ -239,14 +255,14 @@
                                 </div>
                                 <!-- <div class="header-action-icon-2">
                                     <a href="shop-compare.html">
-                                        <img class="svgInject" alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-compare.svg' %}" />
+                                        <img class="svgInject" alt="PhoenixMart" src="{% static 'assets/imgs/theme/icons/icon-compare.svg' %}" />
                                         <span class="pro-count blue ">3</span>
                                     </a>
                                     <a href="shop-compare.html"><span class="lable ml-0">Compare</span></a>
                                 </div> -->
                                 <div class="header-action-icon-2">
                                     <a href="{% url 'core:wishlist' %}">
-                                        <img class="svgInject" alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-heart.svg' %}" />
+                                        <img class="svgInject" alt="PhoenixMart" src="{% static 'assets/imgs/theme/icons/icon-heart.svg' %}" />
                                         {% if request.user.is_authenticated %}
                                         <span class="pro-count blue">{{ wishlist.count }}</span>
                                         {% else %}
@@ -257,7 +273,7 @@
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a class="mini-cart-icon" href="{% url 'core:cart' %}">
-                                        <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}" />
+                                        <img alt="PhoenixMart" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}" />
                                         <span class="pro-count blue cart-items-count">{{ request.session.cart_data_obj|length }}</span>
                                     </a>
                                     <a href="{% url 'core:cart' %}"><span class="lable">Cart</span></a>
@@ -274,7 +290,7 @@
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a href="{% url 'core:dashboard' %}">
-                                        <img class="svgInject" alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-user.svg' %}" />
+                                        <img class="svgInject" alt="PhoenixMart" src="{% static 'assets/imgs/theme/icons/icon-user.svg' %}" />
                                     </a>
                                     <a href="{% url 'core:dashboard' %}"><span class="lable ml-0">Account</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
@@ -303,7 +319,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="{% url 'core:index' %}"><img src="{% static 'assets/imgs/theme/logo.svg' %}" alt="logo" /></a>
+                        <a href="{% url 'core:index' %}"><img src="{% static 'assets/imgs/logo.png' %}" alt="logo" /></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block">
@@ -395,7 +411,7 @@
                                             </li>
                                             <li class="sub-mega-menu sub-mega-menu-width-34">
                                                 <div class="menu-banner-wrap">
-                                                    <a href="shop-product-right.html"><img src="{% static 'assets/imgs/banner/banner-menu.png' %}" alt="Nest" /></a>
+                                                    <a href="shop-product-right.html"><img src="{% static 'assets/imgs/banner/banner-menu.png' %}" alt="PhoenixMart" /></a>
                                                     <div class="menu-banner-content">
                                                         <h4>Hot deals</h4>
                                                         <h3>
@@ -454,7 +470,7 @@
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
                                 <a href="{% url 'core:wishlist' %}">
-                                    <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-heart.svg' %}" />
+                                    <img alt="PhoenixMart" src="{% static 'assets/imgs/theme/icons/icon-heart.svg' %}" />
                                     {% if request.user.is_authenticated %}
                                     <span class="pro-count blue">{{ wishlist.count }}</span>
                                     {% else %}
@@ -464,7 +480,7 @@
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="{% url 'core:cart' %}">
-                                    <img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}" />
+                                    <img alt="PhoenixMart" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}" />
                                     <span class="pro-count white cart-items-count">{{ request.session.cart_data_obj|length }}</span>
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -499,7 +515,7 @@
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
-                    <a href="index.html"><img src="{% static 'assets/imgs/theme/logo.svg' %}" alt="logo" /></a>
+                    <a href="index.html"><img src="{% static 'assets/imgs/logo.png' %}" alt="logo" /></a>
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -697,7 +713,7 @@
                                 <h2 class="mb-20">
                                     Stay home & get your daily <br /> needs from our shop
                                 </h2>
-                                <p class="mb-45">Start You'r Daily Shopping with <span class="text-brand">Nest Mart</span></p>
+                                <p class="mb-45">Start You'r Daily Shopping with <span class="text-brand">PhoenixMart Mart</span></p>
                                 <form class="form-subcriber d-flex">
                                     <input type="email" placeholder="Your emaill address" />
                                     <button class="btn" type="submit">Subscribe</button>
@@ -787,11 +803,11 @@
                     <div class="col">
                         <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0">
                             <div class="logo mb-30">
-                                <a href="index.html" class="mb-15"><img src="{% static 'assets/imgs/theme/logo.svg' %}" alt="logo" /></a>
+                                <a href="index.html" class="mb-15"><img src="{% static 'assets/imgs/logo.png/' %}" alt="logo" /></a>
                                 <p class="font-lg text-heading">Awesome grocery store website template</p>
                             </div>
                             <ul class="contact-infor">
-                                <li><img src="{% static 'assets/imgs/theme/icons/icon-location.svg' %}" alt="" /><strong>Address: </strong> <span>5171 W Campbell Ave undefined Kent, Utah 53127 United States</span></li>
+                                <li><img src="{% static 'assets/imgs/theme/icons/icon-location.svg' %}" alt="" /><strong>Address: </strong> <span>+123 Main Street, Phoenixville, AZ 12345, United States</span></li>
                                 <li><img src="{% static 'assets/imgs/theme/icons/icon-contact.svg' %}" alt="" /><strong>Call Us:</strong><span>(+91) - 540-025-124553</span></li>
                                 <li><img src="{% static 'assets/imgs/theme/icons/icon-email-2.svg' %}" alt="" /><strong>Email:</strong><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6a190b060f2a240f191e44090507">[email&#160;protected]</a></span></li>
                                 <li><img src="{% static 'assets/imgs/theme/icons/icon-clock.svg' %}" alt="" /><strong>Hours:</strong><span>10:00 - 18:00, Mon - Sat</span></li>
@@ -865,7 +881,7 @@
                     <div class="footer-bottom"></div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6">
-                    <p class="font-sm mb-0">&copy; 2022, <strong class="text-brand">Nest</strong> - HTML Ecommerce Template <br />All rights reserved</p>
+                    <p class="font-sm mb-0">&copy; 2022, <strong class="text-brand">PhoenixMart</strong> - HTML Ecommerce Template <br />All rights reserved</p>
                 </div>
                 <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
                     <div class="hotline d-lg-inline-flex mr-30">

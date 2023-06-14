@@ -163,10 +163,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 JAZZMIN_SETTINGS = {
-    'site_header': "Desphixs Shop",
+    'site_header': "PhoeniMart",
     'site_brand': "You order, we deliver",
     'site_logo': "assets/imgs/theme/loading.gif",
-    'copyright': "desphixs-shop.com",
+    'copyright': "Techie Nerd Squad",
 }
 
 LOGIN_URL = "userauths:sign-in"
@@ -193,5 +193,5 @@ CKEDITOR_CONFIGS = {
 }
 
 
-PAYPAL_RECEIVER_EMAIL = 'businessdestiny@gmail.com'
+PAYPAL_RECEIVER_EMAIL = 'bkutalian@gmail.com'
 PAYPAL_TEST = True

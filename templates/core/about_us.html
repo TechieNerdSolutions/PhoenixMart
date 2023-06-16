@@ -5,7 +5,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <a href="{% url 'core:index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> Pages <span></span> About us
                 </div>
             </div>
@@ -16,13 +16,14 @@
                     <div class="col-xl-10 col-lg-12 m-auto">
                         <section class="row align-items-center mb-50">
                             <div class="col-lg-6">
-                                <img src="{% static 'assets/imgs/page/about-1.png' %}" alt="" class="border-radius-15 mb-md-3 mb-lg-0 mb-sm-4" />
+                                <img src="{% static 'assets/imgs/phoenixmart-big.png' %}" alt="" class="border-radius-15 mb-md-3 mb-lg-0 mb-sm-4" />
                             </div>
                             <div class="col-lg-6">
                                 <div class="pl-25">
-                                    <h2 class="mb-30">Welcome to Nest</h2>
-                                    <p class="mb-25">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate id est laborum.</p>
-                                    <p class="mb-50">Ius ferri velit sanctus cu, sed at soleat accusata. Dictas prompta et Ut placerat legendos interpre.Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante Etiam sit amet orci eget. Quis commodo odio aenean sed adipiscing. Turpis massa tincidunt dui ut ornare lectus. Auctor elit sed vulputate mi sit amet. Commodo consequat. Duis aute irure dolor in reprehenderit in voluptate id est laborum.</p>
+                                    <h2 class="mb-30">Welcome to PhoenixMart</h2>
+                                    <p class="mb-10">At Techie Nerd Squad, we are a dedicated team of technology enthusiasts passionate about creating innovative e-commerce solutions. With a shared vision of revolutionizing the online shopping experience, we have come together to develop a platform that caters to the needs of modern consumers.</p>
+                                    <p class="mb-10">Our team is comprised of individuals with diverse backgrounds and expertise, bringing together a wealth of knowledge in full stack development, frontend development, and UI/UX design. With our combined skills, we strive to deliver a seamless and intuitive user experience that sets PhoenixMart apart from traditional e-commerce platforms.</p>
+                                    <p class="mb-10">Driven by our commitment to excellence, we aim to create a platform that not only provides a wide range of products but also offers a personalized and engaging shopping journey. Our focus is on delivering a user-centric design that makes navigation effortless, showcases products in the best light, and ensures a secure and enjoyable shopping experience for our customers.</p>
                                     <div class="carausel-3-columns-cover position-relative">
                                         <div id="carausel-3-columns-arrows"></div>
                                         <div class="carausel-3-columns" id="carausel-3-columns">
@@ -32,6 +33,8 @@
                                             <img src="{% static 'assets/imgs/page/about-2.png' %}" alt="" />
                                         </div>
                                     </div>
+                                    <p class="mb-10 mt-10">As technology enthusiasts, we understand the evolving needs of both consumers and businesses in the digital era. Our platform is designed to address the challenges faced by online shoppers, offering a convenient and reliable solution that meets their expectations. We believe in the power of technology to enhance and simplify our daily lives, and we are dedicated to harnessing that power to shape the future of e-commerce.</p>
+                                    <p class="mb-10">Join us on this exciting journey as we revolutionize the way people shop online. Together, we can create a seamless and personalized shopping experience that will make PhoenixMart the go-to destination for all your online shopping needs.</p>
                                 </div>
                             </div>
                         </section>
@@ -42,48 +45,42 @@
                                     <div class="featured-card">
                                         <img src="{% static 'assets/imgs/theme/icons/icon-1.svg' %}" alt="" />
                                         <h4>Best Prices & Offers</h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                                        <a href="#">Read more</a>
+                                        <p>We believe in offering our customers the best prices and unbeatable offers at PhoenixMart. Our team works diligently to curate a selection of products that provide excellent value for your money. With competitive prices and exclusive deals, we ensure that you get the most out of your shopping experience. From seasonal sales to limited-time promotions, we constantly strive to provide the best prices and offers to make your shopping experience both enjoyable and affordable.</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-24">
                                     <div class="featured-card">
                                         <img src="{% static 'assets/imgs/theme/icons/icon-2.svg' %}" alt="" />
                                         <h4>Wide Assortment</h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                                        <a href="#">Read more</a>
+                                        <p>At PhoenixMart, we understand that every customer has unique preferences and needs. That's why we offer a wide assortment of products to cater to a variety of tastes and requirements. Explore our extensive collection that encompasses diverse categories, including electronics, fashion, home decor, beauty, and much more. With a wide range of options to choose from, you'll find exactly what you're looking for, no matter your style or budget.</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-24">
                                     <div class="featured-card">
                                         <img src="{% static 'assets/imgs/theme/icons/icon-3.svg' %}" alt="" />
                                         <h4>Free Delivery</h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                                        <a href="#">Read more</a>
+                                        <p>We believe that convenience should be a part of every shopping experience. That's why we offer free delivery on all orders at PhoenixMart. Say goodbye to additional shipping costs and enjoy the convenience of having your purchases delivered right to your doorstep without any extra charges. Whether you're shopping for a small item or making a larger purchase, our free delivery service ensures that you can shop with ease and peace of mind.</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-24">
                                     <div class="featured-card">
                                         <img src="{% static 'assets/imgs/theme/icons/icon-4.svg' %}" alt="" />
                                         <h4>Easy Returns</h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                                        <a href="#">Read more</a>
+                                        <p>At PhoenixMart, we understand that sometimes things don't work out as planned. That's why we offer easy returns, ensuring a hassle-free experience for our customers. If you're not satisfied with your purchase, simply return it within a specified time frame, and we'll take care of the rest. Your satisfaction is our top priority, and we strive to make the return process as convenient and seamless as possible.</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-24">
                                     <div class="featured-card">
                                         <img src="{% static 'assets/imgs/theme/icons/icon-5.svg' %}" alt="" />
                                         <h4>100% Satisfaction</h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                                        <a href="#">Read more</a>
+                                        <p>We are committed to providing 100% satisfaction to our customers at PhoenixMart. From the moment you start browsing our extensive collection to the final delivery of your order, we prioritize your happiness and strive to exceed your expectations. Our dedicated team is always available to assist you, answer your queries, and ensure that your shopping experience is nothing short of exceptional. We take pride in delivering products and services that leave you fully satisfied and coming back for more.</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 mb-24">
                                     <div class="featured-card">
                                         <img src="{% static 'assets/imgs/theme/icons/icon-6.svg' %}" alt="" />
                                         <h4>Great Daily Deal</h4>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                                        <a href="#">Read more</a>
+                                        <p>Get ready for exciting daily deals at PhoenixMart! We believe in offering our customers the best value for their money, and our daily deals are designed to do just that. Discover incredible discounts and special offers on a wide range of products every day. From electronics to fashion, home essentials to gadgets, our daily deals ensure that you can enjoy fantastic savings while shopping for the items you love. Don't miss out on these limited-time offers and grab great deals every day!</p>
                                     </div>
                                 </div>
                             </div>
@@ -95,23 +92,22 @@
                                 </div>
                                 <div class="col-lg-5">
                                     <h4 class="mb-20 text-muted">Our performance</h4>
-                                    <h1 class="heading-1 mb-40">Your Partner for e-commerce grocery solution</h1>
-                                    <p class="mb-30">Ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>
-                                    <p>Pitatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</p>
+                                    <h1 class="heading-1 mb-40">Your Partner for online shopping solution</h1>
+                                    <p class="mb-30">At PhoenixMart, we take immense pride in our performance and strive to deliver exceptional results. With a track record of success and a commitment to excellence, we have established ourselves as a trusted name in the e-commerce industry. Our performance is driven by our dedication to providing top-notch customer service, offering high-quality products, and ensuring a seamless shopping experience. We continuously monitor and improve our performance to meet and exceed the expectations of our valued customers. With PhoenixMart, you can expect nothing less than outstanding performance and exceptional service.</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4 pr-30 mb-md-5 mb-lg-0 mb-sm-5">
                                     <h3 class="mb-30">Who we are</h3>
-                                    <p>Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.</p>
+                                    <p>PhoenixMart is a leading e-commerce platform that is revolutionizing the way people shop and experience convenience. We are a team of passionate individuals who are driven by a shared vision of providing a world-class online shopping destination. Our team is comprised of talented professionals from various backgrounds, including technology, marketing, and customer service. Together, we work tirelessly to create a platform that offers a diverse range of products, innovative features, and a user-friendly interface. At PhoenixMart, we believe in the power of e-commerce to transform lives and bring convenience to your fingertips.</p>
                                 </div>
                                 <div class="col-lg-4 pr-30 mb-md-5 mb-lg-0 mb-sm-5">
                                     <h3 class="mb-30">Our history</h3>
-                                    <p>Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.</p>
+                                    <p>PhoenixMart has a rich and inspiring history that has shaped us into the trusted e-commerce platform we are today. Our journey began with a vision to create a platform that revolutionizes the way people shop and connects buyers with a wide assortment of products. Over the years, we have grown and evolved, adapting to the changing needs of our customers and the dynamic landscape of the e-commerce industry. Our commitment to innovation, quality, and customer satisfaction has been the driving force behind our success. From humble beginnings to becoming a market leader, we have stayed true to our values and have built a strong foundation of trust and reliability. As we look towards the future, we continue to build upon our history and strive to enhance the shopping experience for our valued customers.</p>
                                 </div>
                                 <div class="col-lg-4">
                                     <h3 class="mb-30">Our mission</h3>
-                                    <p>Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.</p>
+                                    <p> Our mission at PhoenixMart is to redefine the online shopping experience and empower customers with endless possibilities. We are on a mission to provide a seamless and enjoyable shopping journey, where customers can explore a wide range of products, find great deals, and experience exceptional service. We aim to create a platform that offers convenience, reliability, and satisfaction to every customer. Our mission extends beyond just transactions; we strive to build long-lasting relationships with our customers by consistently delivering value and exceeding expectations. With our mission as our guiding force, we are dedicated to making your shopping experience truly remarkable.</p>
                                 </div>
                             </div>
                         </section>
@@ -151,17 +147,15 @@
                                 <div class="col-lg-4 mb-lg-0 mb-md-5 mb-sm-5">
                                     <h6 class="mb-5 text-brand">Our Team</h6>
                                     <h1 class="mb-30">Meet Our Expert Team</h1>
-                                    <p class="mb-30">Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.</p>
-                                    <p class="mb-30">Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.</p>
-                                    <a href="#" class="btn">View All Members</a>
+                                    <p class="mb-30">At PhoenixMart, we take pride in having a team of experts who are committed to delivering excellence. Led by Oladele A., our talented Full-stack Developer, and Mary S., our skilled Frontend Developer, our team is passionate about creating a seamless and enjoyable shopping experience for our users. With their combined expertise, they ensure that our platform is visually appealing, user-friendly, and technologically advanced. Their collaborative approach and innovative mindset enable them to overcome challenges and continuously improve the functionality and performance of our platform. We are confident that their dedication and expertise will drive the success of PhoenixMart and provide our users with an exceptional e-commerce experience..</p>
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6">
                                             <div class="team-card">
-                                                <img src="{% static 'assets/imgs/page/about-6.png' %}" alt="" />
+                                                <img src="{% static 'assets/imgs/image-adewunmi.jpg' %}" alt="" />
                                                 <div class="content text-center">
-                                                    <h4 class="mb-5">H. Merinda</h4>
+                                                    <h4 class="mb-5">A. OLadele</h4>
                                                     <span>CEO & Co-Founder</span>
                                                     <div class="social-network mt-20">
                                                         <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-facebook-brand.svg' %}" alt="" /></a>
@@ -176,8 +170,8 @@
                                             <div class="team-card">
                                                 <img src="{% static 'assets/imgs/page/about-8.png' %}" alt="" />
                                                 <div class="content text-center">
-                                                    <h4 class="mb-5">Dilan Specter</h4>
-                                                    <span>Head Engineer</span>
+                                                    <h4 class="mb-5">Mary Sanni</h4>
+                                                    <span>Frontend Engineer</span>
                                                     <div class="social-network mt-20">
                                                         <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-facebook-brand.svg' %}" alt="" /></a>
                                                         <a href="#"><img src="{% static 'assets/imgs/theme/icons/icon-twitter-brand.svg' %}" alt="" /></a>

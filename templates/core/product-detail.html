@@ -12,8 +12,8 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
-                    <span></span> <a href="shop-grid-right.html">Vegetables & tubers</a> <span></span> Seeds of Change Organic
+                    <a href="{% url 'core:index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <span></span> <a href="{% url 'products:product-list' %}">Products</a> <span></span> {{ p.title }}
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                                                     <div class="product-rate d-inline-block">
                                                         <div class="product-rating" style="width: 90%"></div>
                                                     </div>
-                                                    <span class="font-small ml-5 text-muted"> (32 reviews)</span>
+                                                    <span class="font-small ml-5 text-muted"> ({{ reviews.count }})</span>
                                                 </div>
                                             </div>
                                             <div class="clearfix product-price-cover">
@@ -243,7 +243,7 @@
                                                     <img src="{{p.vendor.image.url}}" alt="" />
                                                     <div class="vendor-name ml-15">
                                                         <h6>
-                                                            <a href="vendor-details-2.html">{{p.vendor.title}}</a>
+                                                            <a href="{% url 'core:vendor-detail' vid %}">{{p.vendor.title}}</a>
                                                         </h6>
                                                         <div class="product-rate-cover text-end">
                                                             <div class="product-rate d-inline-block">
@@ -541,26 +541,20 @@
                                 <ul>
                                     <li class="hr"><span></span></li>
                                 </ul>
-                                <p>Become a Vendor? <a href="{% url 'userauths:sign-up' %}"> Register now</a></p>
+                                <p>Become a Vendor? <a href="page-register.html"> Register now</a></p>
                             </div>
                             <div class="sidebar-widget widget-category-2 mb-30">
                                 <h5 class="section-title style-1 mb-30">Category</h5>
                                 <ul>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-1.svg' %}" alt="" />Milks & Dairies</a><span class="count">30</span>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-2.svg' %}" alt="" />Clothing</a><span class="count">35</span>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-3.svg' %}" alt="" />Pet Foods </a><span class="count">42</span>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-4.svg' %}" alt="" />Baking material</a><span class="count">68</span>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-5.svg' %}" alt="" />Fresh Fruit</a><span class="count">87</span>
-                                    </li>
+                                  
+                                      {% for c in categories|slice:":5" %}
+                                      <li>
+                                        <a href="{% url 'core:category-product-list' c.cid %}">
+                                          <img src="{{c.image.url}}" alt="{{c.title}}" />{{c.title}}</a
+                                        ><span class="count">{{c.category.count}}</span>
+                                      </li>
+                                      {% endfor %}
+                                    
                                 </ul>
                             </div>
                             <!-- Fillter By Price -->
@@ -643,6 +637,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Ads Widget -->
                             <div class="banner-img wow fadeIn mb-lg-0 animated d-lg-block d-none">
                                 <img src="{% static 'assets/imgs/banner/banner-11.png' %}" alt="" />
                                 <div class="banner-text">

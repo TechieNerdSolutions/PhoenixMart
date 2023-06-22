@@ -1,4 +1,4 @@
-from core.models import Product
+from products.models import Product
 from django import forms
 # from bootstrap_datepicker_plus import DatePickerInput
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput

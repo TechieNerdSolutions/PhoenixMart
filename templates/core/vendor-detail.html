@@ -6,7 +6,7 @@
         <a href="{% url 'core:index' %}" rel="nofollow"
           ><i class="fi-rs-home mr-5"></i>Home</a
         >
-        <span></span> Store <span></span> phoenix Food
+        <span></span> Store <span></span> {{vendor.title}}
       </div>
     </div>
   </div>
@@ -115,7 +115,7 @@
               you!
             </p>
           </div>
-          <div class="sort-by-product-area">
+          <!-- <div class="sort-by-product-area">
             <div class="sort-by-cover mr-10">
               <div class="sort-by-product-wrap">
                 <div class="sort-by">
@@ -155,7 +155,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="product-list mb-50">
           {% for p in products %}
           <div class="product-cart-wrap">
@@ -197,10 +197,10 @@
             </div>
             <div class="product-content-wrap">
               <div class="product-category">
-                <a href="shop-grid-right.html">{{p.category.title}}</a>
+                <a href="{% url 'core:category-product-list' c.cid %}">{{p.category.title}}</a>
               </div>
               <h2>
-                <a href="shop-product-right.html"
+                <a href="#"
                   >{{p.title|truncatechars:50}}</a
                 >
               </h2>
@@ -462,7 +462,7 @@
                         <span class="old-price">$16.8</span>
                       </div>
                       <div class="add-cart">
-                        <a class="add" href="shop-cart.html"
+                        <a class="add" href="#"
                           ><i class="fi-rs-shopping-cart mr-5"></i>Add
                         </a>
                       </div>
@@ -482,9 +482,9 @@
         <div class="sidebar-widget widget-category-2 mb-30">
           <h5 class="section-title style-1 mb-30">Category</h5>
           <ul>
-            {% for c in categories %}
+            {% for c in categories|slice:":5" %}
             <li>
-              <a href="shop-grid-right.html">
+              <a href="{% url 'core:category-product-list' c.cid %}">
                 <img src="{{c.image.url}}" alt="" />{{c.title}}</a
               ><span class="count">{{c.category.all.count}}</span>
             </li>
@@ -493,7 +493,7 @@
         </div>
         <!-- Fillter By Price -->
 
-        <div class="banner-img wow fadeIn mb-lg-0 animated d-lg-block d-none">
+        <!-- <div class="banner-img wow fadeIn mb-lg-0 animated d-lg-block d-none">
           <img src="{% static 'assets/imgs/banner/banner-11.png' %}" alt="" />
           <div class="banner-text">
             <span>Oganic</span>
@@ -503,7 +503,7 @@
               Juice
             </h4>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

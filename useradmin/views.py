@@ -1,6 +1,7 @@
 import datetime
 from django.shortcuts import render, redirect
-from core.models import CartOrder, Product, Category
+from core.models import  Category
+from products.models import Product, CartOrder
 from django.db.models import Sum
 from userauths.models import User
 from useradmin.forms import AddProductForm

@@ -22,16 +22,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 environ.Env.read_env()
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY ='SECRET_KEY'
+SECRET_KEY = ('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'django.contrib.humanize',
 
 
@@ -54,12 +54,16 @@ INSTALLED_APPS = [
     'bootstrap_datepicker_plus',
     'bootstrap4',
     'stripe',
+    'rest_framework',
+    
+
     # PayPal Integration
     'paypal.standard.ipn',
 
     # Custom Apps
     'core',
     'userauths',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +85,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'core.context_processor.default',
+                'products.context_processor.default',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -97,18 +101,17 @@ WSGI_APPLICATION = 'phoenixmart.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
+}
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 # }
 
-
-DATABASES = {
-   'default': dj_database_url.parse(env('DATABASE_URL'))
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -163,10 +166,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 JAZZMIN_SETTINGS = {
-    'site_header': "PhoeniMart",
+    'site_header': "PhonixMart",
     'site_brand': "You order, we deliver",
     'site_logo': "assets/imgs/theme/loading.gif",
-    'copyright': "Techie Nerd Squad",
+    'copyright': "PhoenixMart.com",
 }
 
 LOGIN_URL = "userauths:sign-in"
@@ -193,5 +196,5 @@ CKEDITOR_CONFIGS = {
 }
 
 
-PAYPAL_RECEIVER_EMAIL = 'bkutalian@gmail.com'
+PAYPAL_RECEIVER_EMAIL = 'businessdestiny@gmail.com'
 PAYPAL_TEST = True

@@ -37,7 +37,7 @@ def login_view(request):
         return redirect("core:index")
     
     if request.method == "POST":
-        email = request.POST.get("email") # peanu@gmail.com
+        email = request.POST.get("email") # peanuts@gmail.com
         password = request.POST.get("password") # getmepeanuts
 
         try:

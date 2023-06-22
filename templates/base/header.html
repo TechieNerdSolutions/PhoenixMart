@@ -121,7 +121,7 @@
         </div>
         <div class="header-right">
           <div class="search-style-2">
-            <form action="{% url 'core:search' %}" method="GET">
+            <form action="{% url 'products:search' %}" method="GET">
               <select class="select-active">
                 <option>All Categories</option>
                 <option>Milks and Dairies</option>
@@ -188,7 +188,7 @@
                 >
               </div>
               <div class="header-action-icon-2">
-                <a class="mini-cart-icon" href="{% url 'core:cart' %}">
+                <a class="mini-cart-icon" href="{% url 'products:cart' %}">
                   <img
                     alt="PhoenixMart"
                     src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}"
@@ -197,16 +197,16 @@
                     >{{ request.session.cart_data_obj|length }}</span
                   >
                 </a>
-                <a href="{% url 'core:cart' %}"
+                <a href="{% url 'products:cart' %}"
                   ><span class="lable">Cart</span></a
                 >
                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                   <div class="shopping-cart-footer">
                     <div class="shopping-cart-button">
-                      <a href="{% url 'core:cart' %}" class="outline"
+                      <a href="{% url 'products:cart' %}" class="outline"
                         >View cart</a
                       >
-                      <a href="{% url 'core:checkout' %}">Checkout</a>
+                      <a href="{% url 'products:checkout' %}">Checkout</a>
                     </div>
                   </div>
                 </div>
@@ -324,7 +324,7 @@
                   <img
                     src="{% static 'assets/imgs/theme/icons/icon-hot.svg' %}"
                     alt="hot deals"
-                  /><a href="{% url 'core:product-list' %}">Deals</a>
+                  /><a href="{% url 'products:product-list' %}">Deals</a>
                 </li>
                 <li>
                   <a class="active" href="{% url 'core:index' %}">Home</a>
@@ -352,7 +352,7 @@
                 </li>
 
                 <li>
-                  <a href="{% url 'core:product-list'  %}">Shop</a>
+                  <a href="{% url 'products:product-list' %}">Shop</a>
                 </li>
 
                 <li>
@@ -413,7 +413,7 @@
                             >
                           </div>
                           <div class="menu-banner-btn">
-                            <a href="{% url 'core:product-list'  %}"
+                            <a href="{% url 'products:product-list' %}"
                               >Shop now</a
                             >
                           </div>
@@ -490,7 +490,7 @@
               </a>
             </div>
             <div class="header-action-icon-2">
-              <a class="mini-cart-icon" href="{% url 'core:cart' %}">
+              <a class="mini-cart-icon" href="{% url 'products:cart' %}">
                 <img
                   alt="PhoenixMart"
                   src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}"
@@ -502,8 +502,8 @@
               <div class="cart-dropdown-wrap cart-dropdown-hm2">
                 <div class="shopping-cart-footer">
                   <div class="shopping-cart-button">
-                    <a href="{% url 'core:cart' %}">View cart</a>
-                    <a href="{% url 'core:checkout' %}">Checkout</a>
+                    <a href="{% url 'products:cart' %}">View cart</a>
+                    <a href="{% url 'products:checkout' %}">Checkout</a>
                   </div>
                 </div>
               </div>

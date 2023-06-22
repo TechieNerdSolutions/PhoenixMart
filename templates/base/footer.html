@@ -137,7 +137,7 @@
         <div class="col">
           <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0">
             <div class="logo mb-30">
-              <a href="index.html" class="mb-15"
+              <a href="{% url 'core:index' %}" class="mb-15"
                 ><img src="{% static 'assets/imgs/logo.png/' %}" alt="logo"
               /></a>
               <p class="font-lg text-heading">
@@ -209,7 +209,7 @@
           <h4 class="widget-title">Account</h4>
           <ul class="footer-list mb-sm-5 mb-md-0">
             <li><a href="{% url 'userauths:sign-in' %}">Sign In</a></li>
-            <li><a href="{% url 'core:cart' %}">View Cart</a></li>
+            <li><a href="{% url 'products:cart' %}">View Cart</a></li>
             <li><a href="{% url 'core:wishlist' %}">My Wishlist</a></li>
             <li><a href="#">Track My Order</a></li>
             <li><a href="#">Help Ticket</a></li>

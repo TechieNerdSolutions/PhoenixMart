@@ -230,17 +230,13 @@
           </ul>
         </div>
         <div class="footer-link-widget col">
-          <h4 class="widget-title">Popular</h4>
+          <!-- <h4 class="widget-title">Popular</h4>
           <ul class="footer-list mb-sm-5 mb-md-0">
             {% for p in products|slice:":5" %}
-            <li>
-              <a href="{% url '{% url 'products:product-list' pid %}">
-                <img src="{{ p.image.url }}" alt="" />{{p.title}}</a
-              >
-            </li>
+            <li><a href="{% url 'products:product-detail' p.pid %}">{{p.title}}</a></li>
             {% endfor %}
           </ul>
-        </div>
+        </div> -->
         <div class="footer-link-widget widget-install-app col">
           <h4 class="widget-title">Install App</h4>
           <p class="wow fadeIn animated">From App Store or Google Play</p>

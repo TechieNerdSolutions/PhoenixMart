@@ -296,7 +296,7 @@
             >
               <div class="d-flex categori-dropdown-inner">
                 <ul>
-                  {% for c in categories %}
+                  {% for c in categories|slice:":5" %}
 
                   <li>
                     <a href="{% url 'core:category-product-list' c.cid %}">
@@ -335,7 +335,7 @@
                     >Category <i class="fi-rs-angle-down"></i
                   ></a>
                   <ul class="sub-menu">
-                    {% for c in categories %}
+                    {% for c in categories|slice:":5" %}
                     <li>
                       <a href="{% url 'core:category-product-list' c.cid %}"
                         >{{c.title}}</a

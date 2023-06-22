@@ -232,13 +232,13 @@
         <div class="footer-link-widget col">
           <h4 class="widget-title">Popular</h4>
           <ul class="footer-list mb-sm-5 mb-md-0">
-            <li><a href="#">Milk & Flavoured Milk</a></li>
-            <li><a href="#">Butter and Margarine</a></li>
-            <li><a href="#">Eggs Substitutes</a></li>
-            <li><a href="#">Marmalades</a></li>
-            <li><a href="#">Sour Cream and Dips</a></li>
-            <li><a href="#">Tea & Kombucha</a></li>
-            <li><a href="#">Cheese</a></li>
+            {% for p in products|slice:":5" %}
+            <li>
+              <a href="{% url '{% url 'products:product-list' pid %}">
+                <img src="{{ p.image.url }}" alt="" />{{p.title}}</a
+              >
+            </li>
+            {% endfor %}
           </ul>
         </div>
         <div class="footer-link-widget widget-install-app col">

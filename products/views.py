@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from regex import E
 from requests import session
 from taggit.models import Tag
-from products.models import Product, CartOrder, CartOrderProducts, ProductImages, ProductReview, wishlist_model
+from products.models import Product, CartOrder, CartOrderProducts, ProductImages, ProductReview, Wishlist
 from userauths.models import ContactUs, Profile
 from products.forms import ProductReviewForm
 from django.template.loader import render_to_string
@@ -23,7 +23,7 @@ from core.models import Address
 
 
 def product_list_view(request):
-    products = Product.objects.filter(product_status="published").order_by("-id")
+    products = Product.objects.filter(product_status="published")#.order_by("-id")
     tags = Tag.objects.all().order_by("-id")[:6]
 
     context = {
@@ -80,7 +80,7 @@ def product_detail_view(request, pid):
 
 def tag_list(request, tag_slug=None):
 
-    products = Product.objects.filter(product_status="published").order_by("-id")
+    products = Product.objects.filter(product_status="published").order_by(-id)
 
     tag = None 
     if tag_slug:
@@ -116,7 +116,7 @@ def ajax_add_review(request, pid):
 
     return JsonResponse(
        {
-         'bool': True,
+        'bool': True,
         'context': context,
         'average_reviews': average_reviews
        }
@@ -143,7 +143,7 @@ def filter_product(request):
     min_price = request.GET['min_price']
     max_price = request.GET['max_price']
 
-    products = Product.objects.filter(product_status="published").order_by("-id").distinct()
+    products = Product.objects.filter(product_status="published").order_by(-id).distinct()
 
     products = products.filter(price__gte=min_price)
     products = products.filter(price__lte=max_price)
@@ -324,7 +324,7 @@ def add_to_wishlist(request):
 
     context = {}
 
-    wishlist_count = wishlist_model.objects.filter(product=product, user=request.user).count()
+    wishlist_count = Wishlist.objects.filter(product=product, user=request.user).count()
     print(wishlist_count)
 
     if wishlist_count > 0:
@@ -332,7 +332,7 @@ def add_to_wishlist(request):
             "bool": True
         }
     else:
-        new_wishlist = wishlist_model.objects.create(
+        new_wishlist = Wishlist.objects.create(
             user=request.user,
             product=product,
         )
@@ -344,8 +344,8 @@ def add_to_wishlist(request):
 
 def remove_wishlist(request):
     pid = request.GET['id']
-    wishlist = wishlist_model.objects.filter(user=request.user)
-    wishlist_d = wishlist_model.objects.get(id=pid)
+    wishlist = Wishlist.objects.filter(user=request.user)
+    wishlist_d = Wishlist.objects.get(id=pid)
     delete_product = wishlist_d.delete()
     
     context = {

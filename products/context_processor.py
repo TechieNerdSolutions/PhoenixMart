@@ -1,8 +1,9 @@
 from ast import Add
-from products.models import Product, CartOrder, ProductImages, ProductReview, wishlist_model
-from core.models import Category, Vendor, Address
+from products.models import Product, CartOrder, ProductImages, ProductReview, Wishlist
+from core.models import Category, Address
 from django.db.models import Min, Max
 from django.contrib import messages
+from vendor.models import Vendor
 
 def default(request):
     categories = Category.objects.all()
@@ -12,7 +13,7 @@ def default(request):
 
     if request.user.is_authenticated:
         try:
-            wishlist = wishlist_model.objects.filter(user=request.user)
+            wishlist = wishlist.objects.filter(user=request.user)
         except:
             messages.warning(request, "You need to login before accessing your wishlist.")
             wishlist = 0

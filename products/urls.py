@@ -50,11 +50,8 @@ urlpatterns = [
     # Order Detail URL
     path("dashboard/order/<int:id>", order_detail, name="order-detail"),
 
-    
-
     # adding to wishlist
     path("add-to-wishlist/", add_to_wishlist, name="add-to-wishlist"),
-
 
     # Remvoing from wishlist
     path("remove-from-wishlist/", remove_wishlist, name="remove-from-wishlist"),

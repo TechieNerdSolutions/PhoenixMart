@@ -122,7 +122,7 @@
         <div class="header-right">
           <div class="search-style-2">
             <form action="{% url 'products:search' %}" method="GET">
-              <select class="select-active">
+              <!-- <select class="select-active">
                 <option>All Categories</option>
                 <option>Milks and Dairies</option>
                 <option>Wines & Alcohol</option>
@@ -134,7 +134,7 @@
                 <option>Fresh Seafood</option>
                 <option>Noodles & Rice</option>
                 <option>Ice cream</option>
-              </select>
+              </select> -->
               <input type="text" placeholder="Search for items..." name="q" />
               <button class="material-symbols-outlined" type="submit">
                 <span class="material-symbols-outlined">search</span>
@@ -296,7 +296,7 @@
             >
               <div class="d-flex categori-dropdown-inner">
                 <ul>
-                  {% for c in categories|slice:":5" %}
+                  {% for c in categories %}
 
                   <li>
                     <a href="{% url 'core:category-product-list' c.cid %}">
@@ -335,7 +335,7 @@
                     >Category <i class="fi-rs-angle-down"></i
                   ></a>
                   <ul class="sub-menu">
-                    {% for c in categories|slice:":5" %}
+                    {% for c in categories %}
                     <li>
                       <a href="{% url 'core:category-product-list' c.cid %}"
                         >{{c.title}}</a
@@ -356,7 +356,7 @@
                 </li>
 
                 <li>
-                  <a href="{% url 'core:vendor-list' %}">Vendors </a>
+                  <a href="{% url 'vendor:vendor-list' %}"> Vendors</a>
                 </li>
                 <li class="position-static">
                   <a href="#">Mega menu <i class="fi-rs-angle-down"></i></a>

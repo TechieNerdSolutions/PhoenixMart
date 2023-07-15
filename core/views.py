@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from regex import E
 from requests import session
 from taggit.models import Tag
-from core.models import  Category, Vendor, Address
+from core.models import  Category, Address
 from userauths.models import ContactUs, Profile
 from django.template.loader import render_to_string
 from django.contrib import messages
@@ -24,7 +24,7 @@ from products.models import Product, CartOrder
 
 def index(request):
     # bannanas = Product.objects.all().order_by("-id")
-    products = Product.objects.filter(product_status="published", featured=True).order_by("-id")
+    products = Product.objects.filter(product_status="published", featured=True) #.order_by("-id")
 
     context = {
         "products":products
@@ -51,25 +51,6 @@ def category_product_list__view(request, cid):
         "products":products,
     }
     return render(request, "core/category-product-list.html", context)
-
-
-def vendor_list_view(request):
-    vendors = Vendor.objects.all()
-    context = {
-        "vendors": vendors,
-    }
-    return render(request, "core/vendor-list.html", context)
-
-
-def vendor_detail_view(request, vid):
-    vendor = Vendor.objects.get(vid=vid)
-    products = Product.objects.filter(vendor=vendor, product_status="published").order_by("-id")
-
-    context = {
-        "vendor": vendor,
-        "products": products,
-    }
-    return render(request, "core/vendor-detail.html", context)
 
 
 @login_required

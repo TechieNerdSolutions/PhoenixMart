@@ -1,12 +1,9 @@
 from django.contrib import admin
-from core.models import  Category, Vendor, Address
+from core.models import  Category,  Address
 
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['title', 'category_image']
-
-class VendorAdmin(admin.ModelAdmin):
-    list_display = ['title', 'vendor_image']
 
 class AddressAdmin(admin.ModelAdmin):
     list_editable = ['address', 'status']
@@ -15,5 +12,5 @@ class AddressAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Vendor, VendorAdmin)
+
 admin.site.register(Address, AddressAdmin)

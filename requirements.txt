@@ -2,6 +2,7 @@ amqp
 arrow
 asgiref
 attrs
+beautifulsoup4
 boto3
 botocore
 billiard
@@ -39,6 +40,7 @@ django-countries
 django-crispy-forms
 django-debug-toolbar
 django-defender
+django-dotenv
 django-environ
 django-filter
 django-import-export
@@ -52,7 +54,6 @@ django-multiselectfield
 django-nvd3
 django-paypal
 django-phone-field
-django-shortuuidfield
 django-social-share
 django-static-fontawesome
 django-stubs
@@ -79,6 +80,7 @@ MarkupPy
 MarkupSafe
 mypy
 mypy-extensions
+mysqlclient
 oauthlib
 odfpy
 openpyxl
@@ -86,7 +88,7 @@ packaging
 Pillow
 prometheus-client
 prompt-toolkit
-psycopg2-binary
+psycopg2
 pycparser
 pydantic
 pydyf

@@ -243,7 +243,7 @@
                                                     <img src="{{p.vendor.image.url}}" alt="" />
                                                     <div class="vendor-name ml-15">
                                                         <h6>
-                                                            <a href="{% url 'core:vendor-detail' vid %}">{{p.vendor.title}}</a>
+                                                            <a href="{% url 'core:vendor-detail' p.vendor %}">{{p.vendor.title}}</a>
                                                         </h6>
                                                         <div class="product-rate-cover text-end">
                                                             <div class="product-rate d-inline-block">
@@ -351,7 +351,7 @@
                                                         <!-- <div class="product-rate d-inline-block mb-30"></div> -->
                                                         <div class="row">
                                                             <div class="col-lg-8 col-md-12">
-                                                                <form class="form-contact comment_form hide-comment-form" action="{% url 'core:ajax-add-review' p.id %}" id="commentForm" method="POST">
+                                                                <form class="form-contact comment_form hide-comment-form" action="{% url 'products:ajax-add-review' p.id %}" id="commentForm" method="POST">
                                                                     {% csrf_token %}
                                                                     <div class="row">
                                                                         <div class="col-12">

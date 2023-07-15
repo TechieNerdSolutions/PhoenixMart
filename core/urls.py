@@ -1,6 +1,6 @@
 from django import views
 from django.urls import path, include
-from core.views import index, calendar, category_list_view, category_product_list__view, contact, customer_dashboard, make_address_default, purchase_guide, terms_of_service, privacy_policy, about_us, vendor_detail_view, vendor_list_view, ajax_contact_form, wishlist_view
+from core.views import index, calendar, category_list_view, category_product_list__view, contact, customer_dashboard, make_address_default, purchase_guide, terms_of_service, privacy_policy, about_us, ajax_contact_form, wishlist_view
 
 app_name = "core"
 
@@ -12,10 +12,6 @@ urlpatterns = [
     # Category
     path("category/", category_list_view, name="category-list"),
     path("category/<cid>/", category_product_list__view, name="category-product-list"),
-
-    # Vendor
-    path("vendors/", vendor_list_view, name="vendor-list"),
-    path("vendor/<vid>/", vendor_detail_view, name="vendor-detail"),
 
     # Dahboard URL
     path("dashboard/", customer_dashboard, name="dashboard"),

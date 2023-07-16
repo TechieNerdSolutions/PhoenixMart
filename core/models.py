@@ -16,7 +16,7 @@ class Category(models.Model):
     image = models.ImageField(upload_to="category", default="blank")
     description = models.TextField(blank=True)
     parent_category = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, related_name='child_categories')
-    products = models.ManyToManyField('products.Product', related_name='categories')
+    products = models.ManyToManyField('products.Product', related_name='categories', blank=True,)
 
     class Meta:
         verbose_name_plural = "Categories"

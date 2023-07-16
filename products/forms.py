@@ -29,6 +29,16 @@ class ProductForm(forms.ModelForm):
         widgets = {
             'tags': forms.TextInput(attrs={'class': 'tags-input'}),
         }
+        
+class ProductVariantForm(forms.ModelForm):
+    model = ProductVariant
+    fields = [
+        'var_id',
+        'variant_title',
+        'variant_price', 
+        'variant_stock_count',
+        'variant_type',
+    ]
 
 class ProductReviewForm(forms.ModelForm):
     review = forms.CharField(widget=forms.Textarea(attrs={'placeholder': "Write review"}), required=True)

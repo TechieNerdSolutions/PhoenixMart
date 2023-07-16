@@ -54,7 +54,7 @@ class Product(models.Model):
 
     sku = ShortUUIDField(unique=True, length=4, max_length=10, prefix="sku", alphabet="1234567890")
 
-    variants = models.ManyToManyField(ProductVariant, related_name="products")
+    variants = models.ManyToManyField(ProductVariant, related_name="products", blank=True,)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

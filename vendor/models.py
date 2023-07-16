@@ -37,6 +37,7 @@ class Vendor(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='vendor')
     is_registered = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    is_verified = models.BooleanField(default=False)
     website_url = models.CharField(max_length=200, blank=True, null=True)
     social_media_handles = models.CharField(max_length=200, blank=True, null=True)
 
@@ -88,6 +89,9 @@ class Vendor(models.Model):
             digital=digital,
             sku=sku,
             variant_title=variant_title,
+            variant_color=variant_color,
+            variant_size=variant_size,
+            variant_image=variant_image,
             variant_price=variant_price,
             variant_stock_count=variant_stock_count,
             variant_type=variant_type,

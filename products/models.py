@@ -15,6 +15,9 @@ def user_directory_path(instance, filename):
 class ProductVariant(models.Model):
     var_id = ShortUUIDField(unique=True)
     variant_title = models.CharField(max_length=255, default="Fresh Pear")
+    variant_color = models.CharField(max_length=100, default="Red", null=True, blank=True)
+    variant_size = models.CharField(max_length=100, default="Large", null=True, blank=True)
+    variant_image = models.ImageField(upload_to=user_directory_path, default="product.jpg")
     variant_price = models.DecimalField(max_digits=15, decimal_places=2, default=1.99)
     variant_stock_count = models.IntegerField(default=10)
     variant_type = models.CharField(max_length=100, default="Organic", null=True, blank=True)
@@ -54,7 +57,7 @@ class Product(models.Model):
 
     sku = ShortUUIDField(unique=True, length=4, max_length=10, prefix="sku", alphabet="1234567890")
 
-    variants = models.ManyToManyField(ProductVariant, related_name="products", blank=True,)
+    variants = models.ManyToManyField(ProductVariant, related_name="products")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

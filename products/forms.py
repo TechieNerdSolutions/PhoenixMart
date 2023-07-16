@@ -1,14 +1,11 @@
 from django import forms
-from stripe import Review 
-from products.models import Product, ProductReview,  ProductVariant
-
+from products.models import Product, ProductReview, ProductVariant
 
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = [
             'title',
-            'image',
             'description',
             'price',
             'old_price',
@@ -24,21 +21,10 @@ class ProductForm(forms.ModelForm):
             'digital',
             'sku',
             'variants',
-            
         ]
         widgets = {
             'tags': forms.TextInput(attrs={'class': 'tags-input'}),
         }
-        
-class ProductVariantForm(forms.ModelForm):
-    model = ProductVariant
-    fields = [
-        'var_id',
-        'variant_title',
-        'variant_price', 
-        'variant_stock_count',
-        'variant_type',
-    ]
 
 class ProductReviewForm(forms.ModelForm):
     review = forms.CharField(widget=forms.Textarea(attrs={'placeholder': "Write review"}), required=True)
@@ -47,6 +33,18 @@ class ProductReviewForm(forms.ModelForm):
         model = ProductReview
         fields = ['review', 'rating']
 
+class ProductVariantForm(forms.ModelForm):
+    class Meta:
+        model = ProductVariant
+        fields = [
+            'variant_title',
+            'variant_color',
+            'variant_size',
+            'variant_image',
+            'variant_price',
+            'variant_stock_count',
+            'variant_type',
+        ]
 
 class ProductVariantReviewForm(forms.ModelForm):
     class Meta:

@@ -55,11 +55,13 @@ python -m venv env
 ```
 
 4. Activate the virtual environment:
-
-```bash
-source env/bin/activate (Unix/Linux)
-env\Scripts\activate (Windows)
-```
+   - ```bash
+     source env/bin/activate # Unix/Linux
+     ```
+     <p align="center"><strong>OR</strong></p>
+   - ```bash
+      env\Scripts\activate (Windows)
+     ```
 
 5. Install the required dependencies:
 
@@ -89,9 +91,10 @@ python manage.py runserver
 
 ## Usage
 
-- Visit the homepage to explore the marketplace and browse products by category.
-- Sign up or log in to your account as a buyer to add products to your cart, place orders, and manage your profile.
-- Sign up or log in as a Vendor to access the Vendor dashboard, where you can manage your products, inventory, and orders.
+- Visit the [homepage](https://pheonixmart.onrender.com) to explore the marketplace and browse products by category.
+- Sign up or log in...
+  - **As a buyer**: to add products to your cart, place orders, and manage your profile.
+  - **As a vendor**: to access the Vendor dashboard, where you can manage your products, inventory, and orders.
 - Use the search functionality to find specific products by name, category, or keywords.
 - Admins can access the admin panel at ```/admin``` to manage site settings, categories, and user accounts.
 - For more information please refer to this [documentation](docs/documentation.md)

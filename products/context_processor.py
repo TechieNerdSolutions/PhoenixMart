@@ -13,15 +13,15 @@ def default(request):
 
     if request.user.is_authenticated:
         try:
-            wishlist = wishlist.objects.filter(user=request.user)
+            user_wishlist = Wishlist.objects.filter(user=request.user)
+            # You can also check if the wishlist is empty and set it to 0 accordingly
+            wishlist = user_wishlist.count() if user_wishlist.exists() else 0
         except:
             messages.warning(request, "You need to login before accessing your wishlist.")
             wishlist = 0
     else:
         wishlist = 0
 
-    
-    
     try:
         address = Address.objects.get(user=request.user)
     except:

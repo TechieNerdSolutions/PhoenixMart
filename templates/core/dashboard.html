@@ -3,9 +3,7 @@
   <div class="page-header breadcrumb-wrap">
     <div class="container">
       <div class="breadcrumb">
-        <a href="{% url 'core:index' %}" rel="nofollow"
-          ><i class="fi-rs-home mr-5"></i>Home</a
-        >
+        <a href="{% url 'core:index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
         <span></span> Pages <span></span> My Account
       </div>
     </div>
@@ -19,140 +17,69 @@
               <div class="dashboard-menu">
                 <ul class="nav flex-column" role="tablist">
                   <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      id="profile-tab"
-                      data-bs-toggle="tab"
-                      href="#profile"
-                      role="tab"
-                      aria-controls="profile"
-                      aria-selected="false"
-                      ><i class="fi-rs-user mr-10"></i>Profile</a
-                    >
+                    <a class="nav-link active" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab"
+                      aria-controls="profile" aria-selected="false"><i class="fi-rs-user mr-10"></i>Profile</a>
                   </li>
                   <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      id="dashboard-tab"
-                      data-bs-toggle="tab"
-                      href="#dashboard"
-                      role="tab"
-                      aria-controls="dashboard"
-                      aria-selected="false"
-                      ><i class="fi-rs-settings-sliders mr-10"></i>Dashboard</a
-                    >
+                    <a class="nav-link" id="dashboard-tab" data-bs-toggle="tab" href="#dashboard" role="tab"
+                      aria-controls="dashboard" aria-selected="false"><i
+                        class="fi-rs-settings-sliders mr-10"></i>Dashboard</a>
                   </li>
                   <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      id="orders-tab"
-                      data-bs-toggle="tab"
-                      href="#orders"
-                      role="tab"
-                      aria-controls="orders"
-                      aria-selected="false"
-                      ><i class="fi-rs-shopping-bag mr-10"></i>Orders</a
-                    >
+                    <a class="nav-link" id="orders-tab" data-bs-toggle="tab" href="#orders" role="tab"
+                      aria-controls="orders" aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Orders</a>
                   </li>
                   <!-- <li class="nav-item">
                                             <a class="nav-link" id="track-orders-tab" data-bs-toggle="tab" href="#track-orders" role="tab" aria-controls="track-orders" aria-selected="false"><i class="fi-rs-shopping-cart-check mr-10"></i>Track Your Order</a>
                                         </li> -->
                   <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      id="address-tab"
-                      data-bs-toggle="tab"
-                      href="#address"
-                      role="tab"
-                      aria-controls="address"
-                      aria-selected="true"
-                      ><i class="fi-rs-marker mr-10"></i>My Address</a
-                    >
+                    <a class="nav-link" id="address-tab" data-bs-toggle="tab" href="#address" role="tab"
+                      aria-controls="address" aria-selected="true"><i class="fi-rs-marker mr-10"></i>My Address</a>
                   </li>
                   <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      id="account-detail-tab"
-                      data-bs-toggle="tab"
-                      href="#account-detail"
-                      role="tab"
-                      aria-controls="account-detail"
-                      aria-selected="true"
-                      ><i class="fi-rs-user mr-10"></i>Account details</a
-                    >
+                    <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="#account-detail" role="tab"
+                      aria-controls="account-detail" aria-selected="true"><i class="fi-rs-user mr-10"></i>Account
+                      details</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="page-login.html"
-                      ><i class="fi-rs-sign-out mr-10"></i>Logout</a
-                    >
+                    <a class="nav-link" href="page-login.html"><i class="fi-rs-sign-out mr-10"></i>Logout</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-md-9">
               <div class="tab-content account dashboard-content pl-50">
-                <div
-                  class="tab-pane fade active show"
-                  id="profile"
-                  role="tabpanel"
-                  aria-labelledby="profile-tab"
-                >
+                <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                   <div class="card">
                     <div class="card-header border-bottom">
                       <h3 class="mb-0">My Profile</h3>
                     </div>
-                    <div
-                      class="card-body mb-2"
-                      style="display: flex; align-items: center; gap: 10px"
-                    >
+                    <div class="card-body mb-2" style="display: flex; align-items: center; gap: 10px">
                       <div>
                         {% if user_profile.image %}
-                        <span
-                          ><img
-                            src="{{ user_profile.image.url }}"
-                            style="
+                        <span><img src="{{ user_profile.image.url }}" style="
                               width: 150px;
                               object-fit: cover;
                               border-radius: 50%;
                               height: 150px;
-                            "
-                            alt=""
-                        /></span>
+                            " alt="" /></span>
                         {% else %}
-                        <span
-                          ><img
+                        <span><img
                             src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
                             style="
                               width: 150px;
                               object-fit: cover;
                               border-radius: 50%;
                               height: 150px;
-                            "
-                            alt=""
-                        /></span>
+                            " alt="" /></span>
 
                         {% endif %}
                       </div>
 
                       <div>
-                        <span
-                          ><input
-                            class="mb-2"
-                            type="text"
-                            value="Name - {{ user_profile.full_name }}"
-                        /></span>
-                        <span
-                          ><input
-                            class="mb-2"
-                            type="text"
-                            value="Bio - {{ user_profile.bio }}"
-                        /></span>
-                        <span
-                          ><input
-                            class="mb-2"
-                            type="text"
-                            value="Phone - {{ user_profile.phone }}"
-                        /></span>
+                        <span><input class="mb-2" type="text" value="Name - {{ user_profile.full_name }}" /></span>
+                        <span><input class="mb-2" type="text" value="Bio - {{ user_profile.bio }}" /></span>
+                        <span><input class="mb-2" type="text" value="Phone - {{ user_profile.phone }}" /></span>
                         {% if user_profile.verified == True %}
                         <div class="p-4 border rounded">
                           <span>Verified</span>
@@ -165,22 +92,13 @@
                         </div>
                         {% endif %}
                         <div class="p-4 border rounded">
-                          <a
-                            href="{% url 'userauths:profile-update' %}"
-                            class="btn btn-succees"
-                            >Edit Profile</a
-                          >
+                          <a href="{% url 'userauths:profile-update' %}" class="btn btn-succees">Edit Profile</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="tab-pane fade"
-                  id="dashboard"
-                  role="tabpanel"
-                  aria-labelledby="dashboard-tab"
-                >
+                <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                   <div class="card">
                     <div class="card-header">
                       <h3 class="mb-0">Hello {{request.user|title}}!</h3>
@@ -203,12 +121,7 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="tab-pane fade"
-                  id="orders"
-                  role="tabpanel"
-                  aria-labelledby="orders-tab"
-                >
+                <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
                   <div class="card">
                     <div class="card-header">
                       <h3 class="mb-0">Your Orders</h3>
@@ -243,11 +156,7 @@
                               {% endif %}
                               <td>${{o.price}}</td>
                               <td>
-                                <a
-                                  href="{% url 'core:order-detail' o.id %}"
-                                  class="btn-small d-block"
-                                  >View</a
-                                >
+                                <a href="{% url 'core:order-detail' o.id %}" class="btn-small d-block">View</a>
                               </td>
                             </tr>
                             {% endfor %}
@@ -257,12 +166,7 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="tab-pane fade"
-                  id="track-orders"
-                  role="tabpanel"
-                  aria-labelledby="track-orders-tab"
-                >
+                <div class="tab-pane fade" id="track-orders" role="tabpanel" aria-labelledby="track-orders-tab">
                   <div class="card">
                     <div class="card-header">
                       <h3 class="mb-0">Orders tracking</h3>
@@ -276,31 +180,16 @@
                       </p>
                       <div class="row">
                         <div class="col-lg-8">
-                          <form
-                            class="contact-form-style mt-30 mb-50"
-                            action="#"
-                            method="post"
-                          >
+                          <form class="contact-form-style mt-30 mb-50" action="#" method="post">
                             <div class="input-style mb-20">
                               <label>Order ID</label>
-                              <input
-                                name="order-id"
-                                placeholder="Found in your order confirmation email"
-                                type="text"
-                              />
+                              <input name="order-id" placeholder="Found in your order confirmation email" type="text" />
                             </div>
                             <div class="input-style mb-20">
                               <label>Billing email</label>
-                              <input
-                                name="billing-email"
-                                placeholder="Email you used during checkout"
-                                type="email"
-                              />
+                              <input name="billing-email" placeholder="Email you used during checkout" type="email" />
                             </div>
-                            <button
-                              class="submit submit-auto-width"
-                              type="submit"
-                            >
+                            <button class="submit submit-auto-width" type="submit">
                               Track
                             </button>
                           </form>
@@ -309,12 +198,7 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="tab-pane fade"
-                  id="address"
-                  role="tabpanel"
-                  aria-labelledby="address-tab"
-                >
+                <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
                   <div class="row">
                     <div>
                       <form class="mb-4" method="POST">
@@ -324,29 +208,14 @@
                         </div>
                         <div class="row">
                           <div class="form-group col-md-6">
-                            <input
-                              placeholder="Address"
-                              required=""
-                              class="form-control"
-                              name="address"
-                              type="text"
-                            />
+                            <input placeholder="Address" required="" class="form-control" name="address" type="text" />
                           </div>
                           <div class="form-group col-md-6">
-                            <input
-                              placeholder="Phone"
-                              required=""
-                              class="form-control"
-                              name="mobile"
-                            />
+                            <input placeholder="Phone" required="" class="form-control" name="mobile" />
                           </div>
                           <div class="col-md-12">
-                            <button
-                              type="submit"
-                              class="btn btn-fill-out submit font-weight-bold"
-                              name="submit"
-                              value="Submit"
-                            >
+                            <button type="submit" class="btn btn-fill-out submit font-weight-bold" name="submit"
+                              value="Submit">
                               Save Address
                             </button>
                           </div>
@@ -371,28 +240,18 @@
                           </address>
                           <br />
                           {% if a.status %}
-                          <i
-                            data-address-id="{{ a.id }}"
-                            class="fa fa-check-circle text-success check{{ a.id }} check"
-                          ></i>
-                          <button
-                            data-address-id="{{ a.id }}"
-                            style="display: none"
-                            class="btn make-default-address button{{ a.id }} action_btn"
-                          >
+                          <i data-address-id="{{ a.id }}"
+                            class="fa fa-check-circle text-success check{{ a.id }} check"></i>
+                          <button data-address-id="{{ a.id }}" style="display: none"
+                            class="btn make-default-address button{{ a.id }} action_btn">
                             Make Default
                           </button>
 
                           {% else %}
-                          <i
-                            data-address-id="{{ a.id }}"
-                            style="display: none"
-                            class="fa fa-check-circle text-success check check{{ a.id }}"
-                          ></i>
-                          <button
-                            data-address-id="{{ a.id }}"
-                            class="btn make-default-address button{{ a.id }} action_btn"
-                          >
+                          <i data-address-id="{{ a.id }}" style="display: none"
+                            class="fa fa-check-circle text-success check check{{ a.id }}"></i>
+                          <button data-address-id="{{ a.id }}"
+                            class="btn make-default-address button{{ a.id }} action_btn">
                             Make Default
                           </button>
                           {% endif %}
@@ -402,113 +261,62 @@
                     {% endfor %}
                   </div>
                 </div>
-                <div
-                  class="tab-pane fade"
-                  id="account-detail"
-                  role="tabpanel"
-                  aria-labelledby="account-detail-tab"
-                >
+                <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
                   <div class="card">
                     <div class="card-header">
                       <h5>Account Details</h5>
                     </div>
                     <div class="card-body">
-                      <p>
-                        Already have an account?
-                        <a href="page-login.html">Log in instead!</a>
-                      </p>
-                      <form method="post" name="enq">
+                      <form method="post" name="profile_form">
                         {% csrf_token %}
                         <div class="row">
                           <div class="form-group col-md-6">
-                            <label
-                              >First Name <span class="required">*</span></label
-                            >
-                            <input
-                              required=""
-                              class="form-control"
-                              name="name"
-                              type="text"
-                            />
+                            <label>First Name <span class="required">*</span></label>
+                            <input required="" class="form-control" name="name" type="text"
+                              value="{{ user.first_name }}" />
                           </div>
                           <div class="form-group col-md-6">
-                            <label
-                              >Last Name <span class="required">*</span></label
-                            >
-                            <input
-                              required=""
-                              class="form-control"
-                              name="phone"
-                            />
+                            <label>Last Name <span class="required">*</span></label>
+                            <input required="" class="form-control" name="phone" value="{{ user.last_name }}" />
                           </div>
                           <div class="form-group col-md-12">
-                            <label
-                              >Display Name
-                              <span class="required">*</span></label
-                            >
-                            <input
-                              required=""
-                              class="form-control"
-                              name="dname"
-                              type="text"
-                            />
+                            <label>Display Name <span class="required">*</span></label>
+                            <input required="" class="form-control" name="dname" type="text"
+                              value="{{ user.profile.display_name }}" />
                           </div>
                           <div class="form-group col-md-12">
-                            <label
-                              >Email Address
-                              <span class="required">*</span></label
-                            >
-                            <input
-                              required=""
-                              class="form-control"
-                              name="email"
-                              type="email"
-                            />
-                          </div>
-                          <div class="form-group col-md-12">
-                            <label
-                              >Current Password
-                              <span class="required">*</span></label
-                            >
-                            <input
-                              required=""
-                              class="form-control"
-                              name="password"
-                              type="password"
-                            />
-                          </div>
-                          <div class="form-group col-md-12">
-                            <label
-                              >New Password
-                              <span class="required">*</span></label
-                            >
-                            <input
-                              required=""
-                              class="form-control"
-                              name="npassword"
-                              type="password"
-                            />
-                          </div>
-                          <div class="form-group col-md-12">
-                            <label
-                              >Confirm Password
-                              <span class="required">*</span></label
-                            >
-                            <input
-                              required=""
-                              class="form-control"
-                              name="cpassword"
-                              type="password"
-                            />
+                            <label>Email Address <span class="required">*</span></label>
+                            <input required="" class="form-control" name="email" type="email"
+                              value="{{ user.email }}" />
                           </div>
                           <div class="col-md-12">
-                            <button
-                              type="submit"
-                              class="btn btn-fill-out submit font-weight-bold"
-                              name="submit"
-                              value="Submit"
-                            >
-                              Save Change
+                            <button type="submit" class="btn btn-fill-out submit font-weight-bold" name="submit"
+                              value="Submit">
+                              Save Profile Changes
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                      <hr />
+                      <form method="post" name="password_form">
+                        {% csrf_token %}
+                        <div class="row">
+                          <div class="form-group col-md-12">
+                            <label>Current Password <span class="required">*</span></label>
+                            <input required="" class="form-control" name="current_password" type="password" />
+                          </div>
+                          <div class="form-group col-md-12">
+                            <label>New Password <span class="required">*</span></label>
+                            <input required="" class="form-control" name="new_password" type="password" />
+                          </div>
+                          <div class="form-group col-md-12">
+                            <label>Confirm Password <span class="required">*</span></label>
+                            <input required="" class="form-control" name="confirm_password" type="password" />
+                          </div>
+                          <div class="col-md-12">
+                            <button type="submit" class="btn btn-fill-out submit font-weight-bold" name="submit"
+                              value="Submit">
+                              Save Password Changes
                             </button>
                           </div>
                         </div>
@@ -526,7 +334,7 @@
 </main>
 
 <script>
-  const labels = {{ month|safe }}
+  const labels = {{ month| safe }}
 
   const data = {
     labels: labels,
@@ -534,7 +342,7 @@
       label: 'Orders',
       backgroundColor: 'rgb(59, 183, 126)',
       borderColor: 'rgb(59, 183, 126)',
-      data: {{ total_orders|safe }}
+      data: {{ total_orders| safe }}
     }],
 
   };
@@ -545,14 +353,14 @@
     type: 'bar',
     data: data,
     options: {
-      tooltips: {enabled: false},
-      hover: {mode: null},
+      tooltips: { enabled: false },
+      hover: { mode: null },
     }
   };
 
   const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
+    document.getElementById('myChart'),
+    config
   );
 </script>
 {% endblock content %}

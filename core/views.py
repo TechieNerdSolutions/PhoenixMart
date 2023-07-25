@@ -20,7 +20,7 @@ from django.db.models import Count, Avg
 from django.db.models.functions import ExtractMonth
 from django.core import serializers
 
-from products.models import Product, CartOrder
+from products.models import Product, CartOrder, Wishlist
 
 def index(request):
     # bannanas = Product.objects.all().order_by("-id")
@@ -102,7 +102,7 @@ def make_address_default(request):
 
 @login_required
 def wishlist_view(request):
-    wishlist = wishlist_model.objects.all()
+    wishlist = Wishlist.objects.all()
     context = {
         "w":wishlist
     }
